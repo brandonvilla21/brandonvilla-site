@@ -15,6 +15,7 @@ const Section = styled.div`
 
 const NameSection = styled(Section)`
   flex-direction: column;
+  height: auto;
 `
 
 const ImageWrapper = styled.div`
@@ -31,17 +32,20 @@ const Img = styled.img`
   margin: 0;
 `
 
-const NameTitle = styled.span`
+const NameTitle = styled.div`
   text-align: center;
   margin-bottom: 5px;
   font-size: 3rem;
   font-weight: 600;
+  line-height: 2.4rem;
 `
-const NameSubTitle = styled.span`
+const NameSubTitle = styled.div`
   margin-top: 1rem;
   text-align: center;
   letter-spacing: 1px;
   font-size: 2rem;
+  line-height: 1.8rem;
+  height: auto;
 `
 const LinkSection = styled(Section)`
   margin-top: 1rem;
@@ -85,7 +89,7 @@ const SocialMedia = styled.div`
 
 const Footer = styled(Section)`
   flex-direction: row;
-  margin-top: 5rem;
+  margin-top: 4rem;
 `
 
 const IndexPage = () => (
@@ -117,7 +121,7 @@ const IndexPage = () => (
           <span>Resume |</span>
         </div>
         <div style={{ flex: 1 }}>
-          &nbsp;View it on GitHub
+          &nbsp; GitHub
         </div>
       </Footer>
     </Root>
