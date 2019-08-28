@@ -3,7 +3,8 @@ import picture from '../images/brandon.png'
 import styled from 'styled-components'
 import Layout from '../components/layout'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInstagram, faLinkedin, faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons"
+import { faLinkedin, faGithub, faTwitter } from "@fortawesome/free-brands-svg-icons"
+import InfoSection from "../components/InfoSection";
 
 const Root = styled.div`
   
@@ -31,7 +32,6 @@ const Img = styled.img`
   width: 14rem;
   margin: 0;
 `
-
 const NameTitle = styled.div`
   text-align: center;
   margin-bottom: 5px;
@@ -46,30 +46,6 @@ const NameSubTitle = styled.div`
   font-size: 2rem;
   line-height: 1.8rem;
   height: auto;
-`
-const LinkSection = styled(Section)`
-  margin-top: 1rem;
-`
-const UlLinks = styled.ul`
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-`
-
-const Item = styled.li`
-  & > a {
-    display: block;
-    text-align: center;
-    margin: 16px;
-    text-decoration: none;
-    cursor: pointer;
-    color: #3d464d;
-
-    &:hover {
-      color: black
-    }
-  }
 `
 
 const SocialMedia = styled.div`
@@ -89,12 +65,13 @@ const SocialMedia = styled.div`
 
 const Footer = styled(Section)`
   flex-direction: row;
-  margin-top: 4rem;
+  margin-top: .5rem;
 `
 
 const FooterOption = styled.div`
   flex: 1;
   & > a {
+    font-size: 16px;
     color: #3d464d;
     text-decoration: none;
     cursor: pointer;
@@ -104,40 +81,36 @@ const FooterOption = styled.div`
   }
 `
 
-const IndexPage = () => (
-  <Layout>
-    <Root>
-      <ImageWrapper>
-        <Img src={picture} alt="Brandon"/>
-      </ImageWrapper>
-      <NameSection>
-        <NameTitle>Brandon Villa</NameTitle>
-        <NameSubTitle>Software Development Engineer</NameSubTitle>
-      </NameSection>
-      <LinkSection>
-        <UlLinks>
-          <Item><a >About</a></Item>
-          <Item><a href="https://github.com/brandonvilla21" target="_blank">GitHub</a></Item>
-          <Item><a>Projects</a></Item>
-          <Item><a href="mailto:brandon.villa.cardenas@gmail.com">Contact</a></Item>
-        </UlLinks>
-      </LinkSection>
-      <SocialMedia>
-        <a href="https://www.instagram.com/brandonvilla21/" target="_blank"><FontAwesomeIcon icon={faInstagram} /></a>
-        <a href="https://www.linkedin.com/in/brandon-villa-622522155/" target="_blank"><FontAwesomeIcon icon={faLinkedin} /></a>
-        <a href="https://github.com/brandonvilla21" target="_blank"><FontAwesomeIcon icon={faGithub} /></a>
-        <a href="https://twitter.com/brandonVilCa21" target="_blank"><FontAwesomeIcon icon={faTwitter} /></a>
-      </SocialMedia>
-      <Footer>
-        <FooterOption style={{ textAlign: 'right' }}>
-          <a href={`Resume.pdf`} target="_blank">Resume |</a>
-        </FooterOption>
-        <FooterOption>
-          &nbsp; <a href="https://github.com/brandonvilla21/brandonvilla-site" target="_blank">View on GitHub</a>
-        </FooterOption>
-      </Footer>
-    </Root>
-  </Layout>
-)
+const IndexPage = () => {
+  return (
+    <Layout>
+      <Root>
+        <ImageWrapper>
+          <Img src={picture} alt="Brandon"/>
+        </ImageWrapper>
+        <NameSection>
+          <NameTitle>Brandon Villa</NameTitle>
+          <NameSubTitle>Software Development Engineer</NameSubTitle>
+        </NameSection>
+
+        <InfoSection />
+        
+        <SocialMedia>
+          <a href="https://www.linkedin.com/in/brandon-villa-622522155/" target="_blank"><FontAwesomeIcon icon={faLinkedin} /></a>
+          <a href="https://github.com/brandonvilla21" target="_blank"><FontAwesomeIcon icon={faGithub} /></a>
+          <a href="https://twitter.com/brandonVilCa21" target="_blank"><FontAwesomeIcon icon={faTwitter} /></a>
+        </SocialMedia>
+        <Footer>
+          <FooterOption style={{ textAlign: 'right' }}>
+            <a href={`Resume.pdf`} target="_blank">Resume |</a>
+          </FooterOption>
+          <FooterOption>
+            &nbsp; <a href="https://github.com/brandonvilla21/brandonvilla-site" target="_blank">View on GitHub</a>
+          </FooterOption>
+        </Footer>
+      </Root>
+    </Layout>
+  )
+}
 
 export default IndexPage
