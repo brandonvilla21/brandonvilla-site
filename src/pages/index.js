@@ -92,6 +92,18 @@ const Footer = styled(Section)`
   margin-top: 4rem;
 `
 
+const FooterOption = styled.div`
+  flex: 1;
+  & > a {
+    color: #3d464d;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+      color: black;
+    }
+  }
+`
+
 const IndexPage = () => (
   <Layout>
     <Root>
@@ -117,12 +129,12 @@ const IndexPage = () => (
         <a href="https://twitter.com/brandonVilCa21" target="_blank"><FontAwesomeIcon icon={faTwitter} /></a>
       </SocialMedia>
       <Footer>
-        <div style={{ flex: 1, textAlign: 'right' }}>
-          <span>Resume |</span>
-        </div>
-        <div style={{ flex: 1 }}>
-          &nbsp; GitHub
-        </div>
+        <FooterOption style={{ textAlign: 'right' }}>
+          <a href={`Resume.pdf`} target="_blank">Resume |</a>
+        </FooterOption>
+        <FooterOption>
+          &nbsp; <a href="https://github.com/brandonvilla21/brandonvilla-site" target="_blank">View on GitHub</a>
+        </FooterOption>
       </Footer>
     </Root>
   </Layout>
