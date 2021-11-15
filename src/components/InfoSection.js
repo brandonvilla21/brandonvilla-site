@@ -61,7 +61,7 @@ const InfoSection = () => {
         <UlLinks>
           <Item><a onClick={() => setShowAbout(true)} >About</a></Item>
           <Item><a href="https://github.com/brandonvilla21" target="_blank">GitHub</a></Item>
-          <Item><a>Projects</a></Item>
+          {/* <Item><a>Projects</a></Item> */}
           <Item><a href="mailto:brandon.villa.cardenas@gmail.com">Contact</a></Item>
         </UlLinks>
       </LinkSection>
